@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">		
+		<link rel="stylesheet" href="css/style.css" />
+		<script
+		  src="https://code.jquery.com/jquery-1.12.4.min.js"
+		  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+		  crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<main class="container">
+				<h1>Introduction to CSS Grid</h1>
+				<p class="lead">CSS Grid allows you to create gridded layouts with ease purely through CSS. Below we will examine some of the different properties CSS Grid offers and how each affects the content.</p>
+				<p>For a full description of each property, check out CSS Tricks'<a href="https://css-tricks.com/snippets/css/complete-guide-grid">A Complete Guide to Grid</a> </p>
+				<section>
+					<div class="example-container">
+						<h2>grid-template-rows and grid-template-columns</h2>
+						<p><code>grid-template-rows</code> is a property of the grid container that determines the heights of each of the rows in the grid. <code>grid-template-columns</code> determines the number and width of the columns. By default, there is one column of 100% width and rows are given <code>auto</code> values, which lets the content in the row determine its height. You can give any valid height/width units to these properties, as well as <code>fr</code> units, which determine how much of the remaining available free space in the container to use after the other rows and columns have calculated their dimensions.</p>
+						<p>Note that defining rows or columns makes space for those rows/columns in the grid container, even if there are no items to fill the space.</p>
+						<div class="grid-container-outer">
+							<div class="grid-container">
+								<div class="grid-item">1</div>
+								<div class="grid-item">2</div>
+								<div class="grid-item">3</div>
+								<div class="grid-item">4</div>
+								<div class="grid-item">5</div>
+								<div class="grid-item">6</div>
+							</div>
+							<div class="properties-container">
+								<label>grid-template-rows:</label>
+								<textarea data-property="grid-template-rows" data-applies-to="container">auto auto auto auto auto auto</textarea>
+								<label>grid-template-columns:</label>
+								<textarea data-property="grid-template-columns" data-applies-to="container"></textarea>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="example-container">
+						<h2>grid-column-gap, grid-row-gap, and grid-gap</h2>
+						<p><code>grid-column-gap</code> and <code>grid-row-gap</code> are properties of the grid container that determine the width of the lines between grid items. If you're familiar with other grid frameworks, this is often referred to as the "gutter". Note that, if you used percentage measurements for grid-template-columns, item width is calculated before the gutter width, which can push content outside the container. <code>grid-gap</code> is a shorthand property that combines the other two properties into one.</p>
+						<div class="grid-container-outer">
+							<div class="grid-container">
+								<div class="grid-item">1</div>
+								<div class="grid-item">2</div>
+								<div class="grid-item">3</div>
+								<div class="grid-item">4</div>
+								<div class="grid-item">5</div>
+								<div class="grid-item">6</div>
+							</div>
+							<div class="properties-container">
+								<label>grid-template-rows:</label>
+								<textarea data-property="grid-template-rows" data-applies-to="container"></textarea>
+								<label>grid-template-columns:</label>
+								<textarea data-property="grid-template-columns" data-applies-to="container"></textarea>
+								<label>grid-column-gap:</label>
+								<textarea data-property="grid-column-gap" data-applies-to="container">0px</textarea>
+								<label>grid-row-gap:</label>
+								<textarea data-property="grid-row-gap" data-applies-to="container">0px</textarea>
+								<label>grid-gap:</label>
+								<textarea data-property="grid-gap" data-applies-to="container">0px 0px</textarea>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="example-container">
+						<h2>justify-items and align-items</h2>
+						<p><code>justify-items</code> is a property of the grid container that determines the alignment of the content inside each item along the row axis. <code>align-items</code> determines the alignment along the column axis. Valid values are <code>start</code> | <code>end</code> | <code>center</code> | <code>stretch</code></p>
+						<div class="grid-container-outer">
+							<div class="grid-container">
+								<div class="grid-item">1</div>
+								<div class="grid-item">2</div>
+								<div class="grid-item">3</div>
+								<div class="grid-item">4</div>
+								<div class="grid-item">5</div>
+								<div class="grid-item">6</div>
+							</div>
+							<div class="properties-container">
+								<label>grid-template-rows:</label>
+								<textarea data-property="grid-template-rows" data-applies-to="container"></textarea>
+								<label>grid-template-columns:</label>
+								<textarea data-property="grid-template-columns" data-applies-to="container"></textarea>
+								<label>justify-items:</label>
+								<textarea data-property="justify-items" data-applies-to="container">start</textarea>
+								<label>align-items:</label>
+								<textarea data-property="align-items" data-applies-to="container">start</textarea>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="example-container">
+						<h2>justify-content and align-content</h2>
+						<p><code>justify-content</code> is a property of the grid container that determines the horizontal alignment of the grid content inside the grid container. <code>align-content</code> determines the vertical alignment of the content inside the container. Valid values are <code>start</code> | <code>end</code> | <code>center</code> | <code>stretch</code> | <code>space-around</code> | <code>space-between</code> | <code>space-evenly</code></p>
+						<div class="grid-container-outer">
+							<div class="grid-container">
+								<div class="grid-item">1</div>
+								<div class="grid-item">2</div>
+								<div class="grid-item">3</div>
+								<div class="grid-item">4</div>
+								<div class="grid-item">5</div>
+								<div class="grid-item">6</div>
+							</div>
+							<div class="properties-container">
+								<label>grid-template-rows:</label>
+								<textarea data-property="grid-template-rows" data-applies-to="container"></textarea>
+								<label>grid-template-columns:</label>
+								<textarea data-property="grid-template-columns" data-applies-to="container"></textarea>
+								<label>justify-content:</label>
+								<textarea data-property="justify-content" data-applies-to="container">start</textarea>
+								<label>align-content:</label>
+								<textarea data-property="align-content" data-applies-to="container"></textarea>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="example-container">
+						<h2>grid-column-start, grid-column-end, grid-row-start, and grid-row-end</h2>
+						<p>These properties of the grid items determine the placement and size of a given item. <code>align-content</code> determines the vertical alignment of the content inside the container. Valid values are <code>start</code> | <code>end</code> | <code>center</code> | <code>stretch</code> | <code>space-around</code> | <code>space-between</code> | <code>space-evenly</code></p>
+						<div class="grid-container-outer">
+							<div class="grid-container">
+								<div class="grid-item">1</div>
+								<div class="grid-item">2</div>
+								<div class="grid-item">3</div>
+								<div class="grid-item">4</div>
+								<div class="grid-item">5</div>
+								<div class="grid-item">6</div>
+							</div>
+							<div class="properties-container">
+								<label>grid-template-rows:</label>
+								<textarea data-property="grid-template-rows" data-applies-to="container"></textarea>
+								<label>grid-template-columns:</label>
+								<textarea data-property="grid-template-columns" data-applies-to="container">50% 50%</textarea>
+								<label>item 3 grid-column-start:</label>
+								<textarea data-property="grid-column-start" data-applies-to="container .grid-item:nth-child(3)"></textarea>
+								<label>item 3 grid-column-end:</label>
+								<textarea data-property="grid-column-end" data-applies-to="container .grid-item:nth-child(3)"></textarea>
+								<label>item 3 grid-row-start:</label>
+								<textarea data-property="grid-row-start" data-applies-to="container .grid-item:nth-child(3)"></textarea>
+								<label>item 3 grid-row-end:</label>
+								<textarea data-property="grid-row-end" data-applies-to="container .grid-item:nth-child(3)"></textarea>
+							
+								<label>item 4 grid-column-start:</label>
+								<textarea data-property="grid-column-start" data-applies-to="container .grid-item:nth-child(4)"></textarea>
+								<label>item 4 grid-column-end:</label>
+								<textarea data-property="grid-column-end" data-applies-to="container .grid-item:nth-child(4)"></textarea>
+								<label>item 4 grid-row-start:</label>
+								<textarea data-property="grid-row-start" data-applies-to="container .grid-item:nth-child(4)"></textarea>
+								<label>item 4 grid-row-end:</label>
+								<textarea data-property="grid-row-end" data-applies-to="container .grid-item:nth-child(4)"></textarea>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</main>
+		</div>
+	</body>
+</html>
