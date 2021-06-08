@@ -1,8 +1,19 @@
 main * {
 	color: #333;
 }
+body{
+	background-color: rgb(156, 176, 194);
+}
 #wrapper {
 	margin-bottom: 100px;
+}
+.container{
+	background-color: rgb(246, 246, 246);
+}
+p{
+	box-shadow: 0px 0px 1px rgb(136, 135, 135);
+	padding: 2px;
+	font-size: 19px;
 }
 .grid-container-outer {
 	display: grid;
@@ -13,6 +24,7 @@ main * {
 	display: grid;
 	border: 1px dashed #ccc;
 	padding: 10px;
+	background-color: azure;
 }
 .grid-item {
 	border: 1px solid #ccc;
@@ -25,6 +37,7 @@ main * {
 .properties-container {
 	border: 1px solid #ccc;
 	padding: 10px;
+	background-color: #dddddd;
 }
 .properties-container textarea {
 	width: 100%;
